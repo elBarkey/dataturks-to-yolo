@@ -57,7 +57,7 @@ def convert_to_yolo_annotation():
         lines = file.readlines()
     for line in lines:
         data = json.loads(line)
-        if len(data['annotation']) == 0:
+        if data['annotation'] == None:
             continue
 
         file_path = download_image(data['content'], image_dir)
